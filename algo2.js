@@ -49,11 +49,27 @@ const expected5 = true;
  * @returns {boolean} Whether the given str can be rearranged into a palindrome.
  */
 
+// function canStringBecomePalindrome(str) {
+//   const strSort = [...str].sort().reduce();
+//   const arr = (index) => {
+//     return strSort.filter((x) => x === index).length;
+//   };
+
+//   const resultArray = strSort.map((e) => arr(e));
+
+//   return arr("a");
+//   // return arr(strSort, "b");
+// }
 function canStringBecomePalindrome(str) {
-  const isSpace = 
+  const charMap = new Map();
+  const createArray = [...str].filter((e) =>
+    charMap.set(e.includes(e), e.length)
+  );
+  return createArray;
 }
+
 console.log(canStringBecomePalindrome(str1));
-console.log(canStringBecomePalindrome(str2));
-console.log(canStringBecomePalindrome(str3));
-console.log(canStringBecomePalindrome(str4));
-console.log(canStringBecomePalindrome(str5));
+// console.log(canStringBecomePalindrome(str2));
+// console.log(canStringBecomePalindrome(str3));
+// console.log(canStringBecomePalindrome(str4));
+// console.log(canStringBecomePalindrome(str5));
